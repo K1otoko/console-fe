@@ -1,0 +1,102 @@
+.workspace-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.workspace-heading .ant-typography {
+  margin: 0;
+}
+
+.workspace-heading h1.ant-typography {
+  margin: 5px 0 3px;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.workspace-eyebrow {
+  color: #1677ff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.workspace-updated-at {
+  font-size: 12px;
+}
+
+.workspace-metrics {
+  margin-bottom: 16px;
+}
+
+.workspace-metric {
+  height: 116px;
+}
+
+.workspace-metric .ant-card-body {
+  padding: 20px;
+}
+
+.workspace-metric .ant-statistic-title {
+  font-size: 13px;
+}
+
+.workspace-metric .ant-statistic-content {
+  font-size: 26px;
+}
+
+.workspace-metric .ant-statistic-content-suffix {
+  font-size: 13px;
+}
+
+.workspace-panel {
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.workspace-panel-heading {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.workspace-panel-heading h2.ant-typography {
+  margin: 0 0 2px;
+  font-size: 16px;
+}
+
+.workspace-panel-heading .ant-typography {
+  font-size: 12px;
+}
+
+.workspace-panel .ant-table-tbody > tr > td {
+  height: 58px;
+}
+
+@media (max-width: 767px) {
+  .workspace-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 22px;
+  }
+
+  .workspace-heading h1.ant-typography {
+    font-size: 26px;
+  }
+
+  .workspace-updated-at {
+    display: none;
+  }
+
+  .workspace-panel-heading {
+    padding-inline: 16px;
+  }
+}
