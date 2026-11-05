@@ -93,8 +93,8 @@ export function ConsoleLayout() {
         <button
           type="button"
           className="brand"
-          aria-label="返回控制台总览"
-          onClick={() => navigate('/overview')}
+          aria-label="返回工作台"
+          onClick={() => navigate('/workspace')}
         >
           <span className="brand-symbol">C</span>
           <span className="brand-copy">

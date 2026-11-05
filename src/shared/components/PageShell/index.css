@@ -1,0 +1,31 @@
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-shell-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-shell-heading h1 {
+  margin: 2px 0 6px;
+}
+
+.page-shell-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: #1677ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-shell-body {
+  min-height: 320px;
+}

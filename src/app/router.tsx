@@ -9,59 +9,73 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="/overview" replace />,
+        element: <Navigate to="/workspace" replace />,
       },
       {
-        path: 'overview',
+        path: 'workspace',
         lazy: async () => {
-          const { OverviewPage } = await import(
-            '../modules/overview/pages/OverviewPage'
+          const { WorkspacePage } = await import(
+            '../platform/workspace/pages/WorkspacePage'
           )
-          return { Component: OverviewPage }
+          return { Component: WorkspacePage }
         },
       },
       {
-        path: 'applications',
-        element: <Navigate to="/applications/list" replace />,
-      },
-      {
-        path: 'applications/list',
+        path: 'workspace/apps/:appKey/*',
         lazy: async () => {
-          const { ApplicationListPage } = await import(
-            '../modules/applications/pages'
+          const { BusinessAppPlaceholder } = await import(
+            '../business/BusinessAppPlaceholder'
           )
-          return { Component: ApplicationListPage }
+          return { Component: BusinessAppPlaceholder }
         },
       },
       {
-        path: 'applications/deployments',
+        path: 'infra',
+        element: <Navigate to="/infra/apps" replace />,
+      },
+      {
+        path: 'infra/apps',
+        lazy: async () => {
+          const { AppListPage } = await import(
+            '../platform/app-catalog/pages/AppListPage'
+          )
+          return { Component: AppListPage }
+        },
+      },
+      {
+        path: 'infra/apps/new',
+        lazy: async () => {
+          const { AppCreatePage } = await import(
+            '../platform/app-catalog/pages/AppCreatePage'
+          )
+          return { Component: AppCreatePage }
+        },
+      },
+      {
+        path: 'infra/apps/:appKey',
+        lazy: async () => {
+          const { AppDetailPage } = await import(
+            '../platform/app-catalog/pages/AppDetailPage'
+          )
+          return { Component: AppDetailPage }
+        },
+      },
+      {
+        path: 'infra/deployments',
         lazy: async () => {
           const { DeploymentsPage } = await import(
-            '../modules/applications/pages'
+            '../platform/deployments/pages/DeploymentsPage'
           )
           return { Component: DeploymentsPage }
         },
       },
       {
-        path: 'resources',
-        element: <Navigate to="/resources/compute" replace />,
-      },
-      {
-        path: 'resources/compute',
+        path: 'infra/resources',
         lazy: async () => {
-          const { ComputeResourcePage } = await import(
-            '../modules/resources/pages'
+          const { ResourcesPage } = await import(
+            '../platform/resources/pages/ResourcesPage'
           )
-          return { Component: ComputeResourcePage }
-        },
-      },
-      {
-        path: 'resources/storage',
-        lazy: async () => {
-          const { StorageResourcePage } = await import(
-            '../modules/resources/pages'
-          )
-          return { Component: StorageResourcePage }
+          return { Component: ResourcesPage }
         },
       },
       {
@@ -71,19 +85,28 @@ export const router = createBrowserRouter([
       {
         path: 'settings/users',
         lazy: async () => {
-          const { UserManagementPage } = await import(
-            '../modules/settings/pages'
+          const { UsersPage } = await import(
+            '../platform/settings/pages/UsersPage'
           )
-          return { Component: UserManagementPage }
+          return { Component: UsersPage }
         },
       },
       {
         path: 'settings/permissions',
         lazy: async () => {
-          const { PermissionPolicyPage } = await import(
-            '../modules/settings/pages'
+          const { PermissionsPage } = await import(
+            '../platform/settings/pages/PermissionsPage'
           )
-          return { Component: PermissionPolicyPage }
+          return { Component: PermissionsPage }
+        },
+      },
+      {
+        path: 'settings/audit',
+        lazy: async () => {
+          const { AuditPage } = await import(
+            '../platform/settings/pages/AuditPage'
+          )
+          return { Component: AuditPage }
         },
       },
       {

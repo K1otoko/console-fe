@@ -11,8 +11,8 @@ export function NotFoundPage() {
         title="页面不存在"
         subTitle="当前地址没有对应的控制台页面。"
         extra={
-          <Button type="primary" onClick={() => navigate('/overview')}>
-            返回总览
+          <Button type="primary" onClick={() => navigate('/workspace')}>
+            返回工作台
           </Button>
         }
       />
